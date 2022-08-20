@@ -1,4 +1,5 @@
 document.getElementById("Germany").addEventListener("click", Germany_clicked);
+document.getElementById("USA").addEventListener("click", USA_clicked);
 
 function Germany_clicked(){
     if(document.getElementById("Germany").checked){
@@ -34,4 +35,35 @@ function Germany_city_clicked(){
     if(!document.getElementById("Oldenburg").checked)
     document.getElementById("Germany").checked = false;
 }
-//////////////////////////////////////////////////////////////////////
+//########################################################//
+
+
+
+function USA_clicked(){
+    if(document.getElementById("USA").checked){
+    document.getElementById("Texas").checked = true;
+    document.getElementById("Florida").checked = true;
+    }
+    else{
+        document.getElementById("Texas").checked = false;
+        document.getElementById("Florida").checked = false;  
+    }
+}
+
+/////////////////////////////////////////////////////////////////////
+
+document.getElementById("Texas").addEventListener("click", USA_city_clicked);
+document.getElementById("Florida").addEventListener("click", USA_city_clicked);
+
+
+function USA_city_clicked(){
+    if(document.getElementById("Texas").checked 
+    && document.getElementById("Florida").checked)
+    document.getElementById("USA").checked = true;
+
+    if(!document.getElementById("Texas").checked)
+    document.getElementById("USA").checked = false;
+
+    if(!document.getElementById("Florida").checked)
+    document.getElementById("USA").checked = false;
+}
